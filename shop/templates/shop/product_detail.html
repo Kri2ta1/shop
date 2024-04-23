@@ -1,0 +1,28 @@
+{%extends "shop/base.html"%}
+{%block title%} {%endblock%}
+{%block content%}
+<div class="d-flex container align-items-center">
+    <div>
+        <img style="width: 35rem;" src="{{product.image.url}}" alt="">
+    </div>
+    <div>
+        <h3 class="text-center p-3">{{product.name}}</h3>
+        <p>{{product.discription}}</p>
+        <div class="d-flex">
+            <p class="fs-3 text-danger">{{product.price}}</p>
+            <p>-{{product.discount}}%</p>
+        </div>
+        <div style="margin-bottom: 15px;">
+            {%for i in '*****'%}
+            {%if forloop.counter <= product.rating%}
+            <img width="32" height="32" src="https://img.icons8.com/skeuomorphism/32/experimental-star-skeuomorphism.png" alt="experimental-star-skeuomorphism"/>
+            {%else%}
+            <img style="filter: grayscale(1);" width="32" height="32" src="https://img.icons8.com/skeuomorphism/32/experimental-star-skeuomorphism.png" alt="experimental-star-skeuomorphism"/>
+            {%endif%}
+            {%endfor%}
+        </div>
+
+        <p class="text-secondary">В наличии: {{product.stock}} товаров</p>
+    </div>
+</div>
+{%endblock%}
